@@ -19,7 +19,7 @@ package minio
 
 // awsS3EndpointMap Amazon S3 endpoint map.
 var awsS3EndpointMap = map[string]string{
-	"us-east-1":      "s3.dualstack.us-east-1.amazonaws.com",
+	"us-east-1":      "s3.us-east-1.amazonaws.com",
 	"us-east-2":      "s3.dualstack.us-east-2.amazonaws.com",
 	"us-west-2":      "s3.dualstack.us-west-2.amazonaws.com",
 	"us-west-1":      "s3.dualstack.us-west-1.amazonaws.com",
