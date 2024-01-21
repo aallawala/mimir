@@ -46,8 +46,6 @@ func DefaultTransport(config HTTPConfig) (*http.Transport, error) {
 		DialContext: (&net.Dialer{
 			Timeout:   30 * time.Second,
 			KeepAlive: 30 * time.Second,
-			DualStack: true,
-			FallbackDelay: 1,
 		}).DialContext,
 
 		MaxIdleConns:          config.MaxIdleConns,
