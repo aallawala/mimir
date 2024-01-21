@@ -46,6 +46,7 @@ func DefaultTransport(config HTTPConfig) (*http.Transport, error) {
 		DialContext: (&net.Dialer{
 			Timeout:   30 * time.Second,
 			KeepAlive: 30 * time.Second,
+
 		}).DialContext,
 
 		MaxIdleConns:          config.MaxIdleConns,
@@ -64,5 +65,6 @@ func DefaultTransport(config HTTPConfig) (*http.Transport, error) {
 		//
 		// Refer: https://golang.org/src/net/http/transport.go?h=roundTrip#L1843.
 		TLSClientConfig: tlsConfig,
+		ForceAttemptHTTP2: true,
 	}, nil
 }
