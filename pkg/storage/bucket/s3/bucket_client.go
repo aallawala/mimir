@@ -60,6 +60,9 @@ func newS3Config(cfg Config) (s3.Config, error) {
 		SSEConfig:          sseCfg,
 		ListObjectsVersion: cfg.ListObjectsVersion,
 		AWSSDKAuth:         cfg.NativeAWSAuthEnabled,
+		TraceConfig: s3.TraceConfig{
+			Enable: true,
+		},
 		HTTPConfig: s3.HTTPConfig{
 			IdleConnTimeout:       model.Duration(cfg.HTTP.IdleConnTimeout),
 			ResponseHeaderTimeout: model.Duration(cfg.HTTP.ResponseHeaderTimeout),

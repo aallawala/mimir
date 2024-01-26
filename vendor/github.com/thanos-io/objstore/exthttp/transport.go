@@ -45,7 +45,7 @@ func DefaultTransport(config HTTPConfig) (*http.Transport, error) {
 		Proxy: http.ProxyFromEnvironment,
 		DialContext: (&net.Dialer{
 			Timeout:   30 * time.Second,
-			KeepAlive: 60 * time.Second,
+			KeepAlive: 30 * time.Second,
 			DualStack: true,
 		}).DialContext,
 
