@@ -65,6 +65,7 @@ func (c *Client) GetObject(ctx context.Context, bucketName, objectName string, o
 			// Close the http response body before returning.
 			// This ends the connection with the server.
 			if httpReader != nil {
+				io.Copy(io.Discard, httpReader)
 				httpReader.Close()
 			}
 		}()
